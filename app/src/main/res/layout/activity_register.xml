@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.emanh.emanh.viewModel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_login"
+        tools:context=".view.activity.RegisterActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:background="@drawable/bg_blue_blur50_0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="48dp"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_blue_blur50_30"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    style="@style/TextContentWhite"
+                    android:gravity="center"
+                    android:text="@string/tv_intro_register"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewAppName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextUsername"
+                    android:layout_marginTop="72dp"
+                    android:drawableStart="@drawable/icon_user"
+                    android:inputType="text"
+                    android:hint="@string/input_username"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextNumberPhone"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/icon_mobile"
+                    android:inputType="number"
+                    android:hint="@string/input_number_phone"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextEmail"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/icon_email"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/input_address_email"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextPassword"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/input_password"
+                    android:drawableStart="@{loginViewModel.passwordIconStart}"
+                    android:drawableEnd="@{loginViewModel.passwordIconEnd}"
+                    android:inputType="@{loginViewModel.inputType}"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextConfirmPassword"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/input_confirm_password"
+                    android:drawableStart="@{loginViewModel.passwordIconStart}"
+                    android:inputType="@{loginViewModel.inputType}"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/ButtonLightBlue"
+                    android:id="@+id/buttonRegister"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/register"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextContentWhite"
+                android:id="@+id/textViewLogin"
+                android:layout_marginBottom="16dp"
+                android:text="@string/tv_login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

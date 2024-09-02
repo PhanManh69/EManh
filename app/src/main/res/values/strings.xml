@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">EManh</string>
+    <string name="emanh">EMANH</string>
+    <string name="welcome">Chào mừng đến với EMANH, nhập tài khoản mà mật khẩu của bạn</string>
+    <string name="input_username">Nhập tên đăng nhập</string>
+    <string name="input_password">Nhập mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="tv_signup">Bạn chưa có tài khoản? Đăng ký</string>
+    <string name="tv_forget_password">Quyên mật khẩu?</string>
+    <string name="input_confirm_password">Nhập lại mật khẩu</string>
+    <string name="input_number_phone">Nhập số điện thoại</string>
+    <string name="input_address_email">Nhập địa chỉ email</string>
+    <string name="register">Đăng ký</string>
+    <string name="tv_login">Bạn đã có tài khoản? Đăng nhập</string>
+    <string name="tv_intro_register">Đăng ký tài khoản mới, nhập thông tin cá nhân của bạn</string>
+    <string name="tv_intro_forget_pass">Quyên mật khẩu, nhập số điện thoại và email đăng ký tài khoản của bạn</string>
+    <string name="next">Tiếp theo</string>
 </resources>
