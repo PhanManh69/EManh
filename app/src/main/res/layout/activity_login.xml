@@ -46,16 +46,13 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="@drawable/bg_blue_blur50_30"
+                android:background="@drawable/bg_black_blue_blur50_30"
                 app:layout_constraintBottom_toBottomOf="parent">
     
                 <TextView
                     style="@style/TextContentWhite"
                     android:gravity="center"
-                    android:text="@string/welcome"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewAppName"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:text="@string/welcome"/>
     
                 <AutoCompleteTextView
                     style="@style/InputTextWhite"
@@ -63,7 +60,8 @@
                     android:layout_marginTop="72dp"
                     android:drawableStart="@drawable/icon_user"
                     android:inputType="text"
-                    android:hint="@string/input_username"/>
+                    android:hint="@string/input_username"
+                    android:error="@{loginViewModel.usernameError}"/>
 
                 <AutoCompleteTextView
                     style="@style/InputTextWhite"
@@ -72,7 +70,8 @@
                     android:hint="@string/input_password"
                     android:drawableStart="@{loginViewModel.passwordIconStart}"
                     android:drawableEnd="@{loginViewModel.passwordIconEnd}"
-                    android:inputType="@{loginViewModel.inputType}"/>
+                    android:inputType="@{loginViewModel.inputType}"
+                    android:error="@{loginViewModel.passwordError}"/>
     
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/ButtonLightBlue"

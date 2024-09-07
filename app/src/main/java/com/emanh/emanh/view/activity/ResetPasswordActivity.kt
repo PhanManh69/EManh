@@ -4,19 +4,20 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.emanh.emanh.R
-import com.emanh.emanh.databinding.ActivityRegisterBinding
+import com.emanh.emanh.databinding.ActivityResetPasswordBinding
 import com.emanh.emanh.viewModel.LoginViewModel
 
-class RegisterActivity : BaseActivity() {
-    private lateinit var binding: ActivityRegisterBinding
+class ResetPasswordActivity : BaseActivity() {
+    private lateinit var binding: ActivityResetPasswordBinding
     private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_register)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_reset_password)
         binding.loginViewModel = loginViewModel
         binding.lifecycleOwner = this
 
@@ -37,34 +38,23 @@ class RegisterActivity : BaseActivity() {
             false
         }
 
-        binding.textViewLogin.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
-
-        binding.buttonRegister.setOnClickListener {
-            loginViewModel.validateRegister(
-                binding.editTextUsername.text.toString(),
-                binding.editTextPhoneNumber.text.toString(),
-                binding.editTextEmail.text.toString(),
+        binding.buttonConfirm.setOnClickListener {
+            loginViewModel.validateResetPassword(
                 binding.editTextPassword.text.toString(),
                 binding.editTextConfirmPassword.text.toString()
             )
+        }
+
+        binding.textViewBack.setOnClickListener {
+            startActivity(Intent(this, ForgetPasswordActivity::class.java))
         }
     }
 
     private fun initViewModel() {
         loginViewModel.isFormValid.observe(this) { isValid ->
             if (isValid) {
-                val emailRegister = binding.editTextEmail.text.toString().trim()
-                val generatedCode = loginViewModel.createCodeConfirm()
-
-                loginViewModel.sendEmail(emailRegister, generatedCode)
-
-                val intent = Intent(this, CodeConfirmRegisterActivity::class.java).apply {
-                    putExtra("emailRegister", emailRegister)
-                    putExtra("codeConfirmRegister", generatedCode)
-                }
-                startActivity(intent)
+                startActivity(Intent(this, LoginActivity::class.java))
+                Toast.makeText(this, "Thay đổi mật khẩu thành công", Toast.LENGTH_LONG).show()
             }
         }
     }

@@ -1,9 +1,11 @@
 package com.emanh.emanh.view.activity
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.emanh.emanh.R
@@ -21,6 +23,7 @@ class LoginActivity : BaseActivity() {
         binding.lifecycleOwner = this
 
         intiButton()
+        initViewModel()
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -37,7 +40,10 @@ class LoginActivity : BaseActivity() {
         }
 
         binding.buttonLogin.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            loginViewModel.validateLogin(
+                binding.editTextUsername.text.toString(),
+                binding.editTextPassword.text.toString()
+            )
         }
 
         binding.textViewSignUp.setOnClickListener {
@@ -46,6 +52,14 @@ class LoginActivity : BaseActivity() {
 
         binding.textViewForgetPassword.setOnClickListener {
             startActivity(Intent(this, ForgetPasswordActivity::class.java))
+        }
+    }
+
+    private fun initViewModel() {
+        loginViewModel.isFormValid.observe(this) { isValid ->
+            if (isValid) {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
         }
     }
 }

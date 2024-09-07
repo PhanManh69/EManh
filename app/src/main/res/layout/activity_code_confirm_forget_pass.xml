@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_login"
-        tools:context=".view.activity.ForgetPasswordActivity">
+        tools:context=".view.activity.CodeConfirmForgetPassActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -34,40 +34,44 @@
 
                 <TextView
                     style="@style/TextContentWhite"
-                    android:gravity="center"
-                    android:text="@string/tv_intro_forget_pass"/>
+                    android:id="@+id/textViewEmail"
+                    android:gravity="center"/>
 
                 <AutoCompleteTextView
                     style="@style/InputTextWhite"
-                    android:id="@+id/editTextPhoneNumber"
+                    android:id="@+id/editTextEnterCode"
                     android:layout_marginTop="72dp"
-                    android:drawableStart="@drawable/icon_mobile"
                     android:inputType="number"
-                    android:hint="@string/input_number_phone"
-                    android:error="@{loginViewModel.phoneNumberError}"/>
-
-                <AutoCompleteTextView
-                    style="@style/InputTextWhite"
-                    android:id="@+id/editTextEmail"
-                    android:layout_marginTop="16dp"
-                    android:drawableStart="@drawable/icon_email"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/input_address_email"
-                    android:error="@{loginViewModel.emailAddressError}"/>
+                    android:letterSpacing="2"
+                    android:maxLength="6"
+                    android:textAlignment="center"
+                    tools:ignore="LabelFor" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     style="@style/ButtonLightBlue"
-                    android:id="@+id/buttonForgetPassword"
+                    android:id="@+id/buttonConfirm"
                     android:layout_marginTop="16dp"
-                    android:text="@string/next"/>
+                    android:text="@string/confirm"/>
+
+                <TextView
+                    style="@style/TextContentWhite"
+                    android:id="@+id/textViewSendCode"
+                    android:layout_marginTop="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/send_back_code"
+                    android:lineSpacingExtra="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
             </LinearLayout>
 
             <TextView
                 style="@style/TextContentWhite"
-                android:id="@+id/textViewLogin"
+                android:id="@+id/textViewForgetPassword"
                 android:layout_marginBottom="16dp"
-                android:text="@string/tv_login"
+                android:text="@string/back_enter_information_your"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>

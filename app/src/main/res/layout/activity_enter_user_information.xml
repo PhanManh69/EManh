@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.emanh.emanh.viewModel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_login"
+        tools:context=".view.activity.EnterUserInformationActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:background="@drawable/bg_blue_blur50_0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="48dp"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_black_blue_blur50_30"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    style="@style/TextTitleWhite"
+                    android:layout_gravity="center"
+                    android:text="@string/tv_enter_information"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextFirstName"
+                    android:layout_marginTop="72dp"
+                    android:drawableStart="@drawable/icon_username"
+                    android:inputType="text"
+                    android:hint="@string/input_first_name"
+                    android:error="@{loginViewModel.firstNameError}"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextLastName"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/icon_username"
+                    android:inputType="text"
+                    android:hint="@string/input_last_name"
+                    android:error="@{loginViewModel.lastNameError}"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextAddress"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/icon_address"
+                    android:completionThreshold="1"
+                    android:maxLines="2"
+                    android:inputType="text"
+                    android:hint="@string/input_address"
+                    android:error="@{loginViewModel.addressError}"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextBirthday"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/icon_birthday"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:hint="@string/input_birthday"
+                    android:error="@{loginViewModel.birthdayError}"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextGender"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/icon_gender"
+                    android:inputType="text"
+                    android:focusable="false"
+                    android:hint="@string/select_gender"
+                    android:error="@{loginViewModel.genderError}"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    style="@style/TextTitleWhite"
+                    android:id="@+id/textViewBack"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:text="@string/back"/>
+
+                <TextView
+                    style="@style/TextTitleWhite"
+                    android:id="@+id/textViewNext"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="end"
+                    android:text="@string/next"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

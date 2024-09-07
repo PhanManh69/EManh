@@ -19,11 +19,36 @@ class ForgetPasswordActivity : BaseActivity() {
         binding.lifecycleOwner = this
 
         initButton()
+        initViewModel()
     }
 
     private fun initButton() {
+        binding.buttonForgetPassword.setOnClickListener {
+            loginViewModel.validateForgetPassword(
+                binding.editTextPhoneNumber.text.toString(),
+                binding.editTextEmail.text.toString()
+            )
+        }
+
         binding.textViewLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+        }
+    }
+
+    private fun initViewModel() {
+        loginViewModel.isFormValid.observe(this) { isValid ->
+            if (isValid) {
+                val emailForgetPassword = binding.editTextEmail.text.toString().trim()
+                val generatedCode = loginViewModel.createCodeConfirm()
+
+                loginViewModel.sendEmail(emailForgetPassword, generatedCode)
+
+                val intent = Intent(this, CodeConfirmForgetPassActivity::class.java).apply {
+                    putExtra("emailForgetPassword", emailForgetPassword)
+                    putExtra("codeConfirmForgetPassword", generatedCode)
+                }
+                startActivity(intent)
+            }
         }
     }
 }
