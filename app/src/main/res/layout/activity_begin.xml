@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/blue"
+    android:background="@color/blackBlue"
     tools:context=".view.activity.BeginActivity">
 
     <ImageView

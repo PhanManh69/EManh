@@ -2,10 +2,11 @@
     <style name="Base.Theme.EManh" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     </style>
 
-    <style name="Theme.EManh" parent="Base.Theme.EManh" >
+    <style name="Theme.EManh" parent="Base.Theme.EManh">
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
     <style name="TextTitleWhite">
@@ -64,7 +65,7 @@
         <item name="android:completionThreshold">1</item>
         <item name="android:maxLines">1</item>
         <item name="android:ems">10</item>
-        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColorHint">@color/grey</item>
         <item name="android:textColor">@color/darkBlue</item>
         <item name="android:textSize">16sp</item>
     </style>
