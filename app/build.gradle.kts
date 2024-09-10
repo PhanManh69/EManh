@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.emanh.emanh"
-        minSdk = 30
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -66,4 +66,8 @@ dependencies {
     implementation(libs.com.android.mail)
     implementation(libs.com.android.activation)
     implementation(libs.org.kotlinx.coroutines.android)
+
+    implementation(libs.bundles.comLibs)
+
+    implementation(libs.androidx.fragment.ktx)
 }

@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
@@ -48,6 +50,17 @@ class ResetPasswordActivity : BaseActivity() {
         binding.textViewBack.setOnClickListener {
             startActivity(Intent(this, ForgetPasswordActivity::class.java))
         }
+
+        binding.editTextConfirmPassword.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                loginViewModel.validateResetPassword(
+                    binding.editTextPassword.text.toString(),
+                    binding.editTextConfirmPassword.text.toString()
+                )
+                return@OnEditorActionListener true
+            }
+            false
+        })
     }
 
     private fun initViewModel() {

@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.emanh.emanh.R
@@ -50,6 +52,20 @@ class RegisterActivity : BaseActivity() {
                 binding.editTextConfirmPassword.text.toString()
             )
         }
+
+        binding.editTextConfirmPassword.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                loginViewModel.validateRegister(
+                    binding.editTextUsername.text.toString(),
+                    binding.editTextPhoneNumber.text.toString(),
+                    binding.editTextEmail.text.toString(),
+                    binding.editTextPassword.text.toString(),
+                    binding.editTextConfirmPassword.text.toString()
+                )
+                return@OnEditorActionListener true
+            }
+            false
+        })
     }
 
     private fun initViewModel() {

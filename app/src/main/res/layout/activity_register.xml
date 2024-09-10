@@ -44,6 +44,7 @@
                     android:drawableStart="@drawable/icon_user"
                     android:inputType="text"
                     android:hint="@string/input_username"
+                    android:imeOptions="actionNext"
                     android:error="@{loginViewModel.usernameError}"/>
 
                 <AutoCompleteTextView
@@ -53,6 +54,7 @@
                     android:drawableStart="@drawable/icon_mobile"
                     android:inputType="number"
                     android:hint="@string/input_number_phone"
+                    android:imeOptions="actionNext"
                     android:error="@{loginViewModel.phoneNumberError}"/>
 
                 <AutoCompleteTextView
@@ -62,6 +64,7 @@
                     android:drawableStart="@drawable/icon_email"
                     android:inputType="textEmailAddress"
                     android:hint="@string/input_address_email"
+                    android:imeOptions="actionNext"
                     android:error="@{loginViewModel.emailAddressError}"/>
 
                 <AutoCompleteTextView
@@ -69,6 +72,7 @@
                     android:id="@+id/editTextPassword"
                     android:layout_marginTop="16dp"
                     android:hint="@string/input_password"
+                    android:imeOptions="actionNext"
                     android:drawableStart="@{loginViewModel.passwordIconStart}"
                     android:drawableEnd="@{loginViewModel.passwordIconEnd}"
                     android:inputType="@{loginViewModel.inputType}"
@@ -79,6 +83,7 @@
                     android:id="@+id/editTextConfirmPassword"
                     android:layout_marginTop="16dp"
                     android:hint="@string/input_confirm_password"
+                    android:imeOptions="actionDone"
                     android:drawableStart="@{loginViewModel.passwordIconStart}"
                     android:inputType="@{loginViewModel.inputType}"
                     android:error="@{loginViewModel.confirmPasswordError}"/>

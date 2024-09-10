@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
@@ -53,6 +55,17 @@ class LoginActivity : BaseActivity() {
         binding.textViewForgetPassword.setOnClickListener {
             startActivity(Intent(this, ForgetPasswordActivity::class.java))
         }
+
+        binding.editTextPassword.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                loginViewModel.validateLogin(
+                    binding.editTextUsername.text.toString(),
+                    binding.editTextPassword.text.toString()
+                )
+                return@OnEditorActionListener true
+            }
+            false
+        })
     }
 
     private fun initViewModel() {

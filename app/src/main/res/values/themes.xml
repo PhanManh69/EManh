@@ -5,8 +5,7 @@
     <style name="Theme.EManh" parent="Base.Theme.EManh">
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="TextTitleWhite">
@@ -15,6 +14,22 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextAppNameWhite">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextAppNameDarkBlue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/darkBlue</item>
     </style>
 
     <style name="TextTitleDarkBlue">
@@ -55,6 +70,14 @@
         <item name="android:textColor">@color/darkBlue</item>
     </style>
 
+    <style name="TextContentDarkBlue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/darkBlue</item>
+    </style>
+
     <style name="InputTextWhite">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">55dp</item>
@@ -81,6 +104,12 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ImageViewButtonDarkBlue">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:tint">@color/darkBlue</item>
     </style>
 
     <style name="DetailRoom" parent="Widget.Design.BottomSheet.Modal">

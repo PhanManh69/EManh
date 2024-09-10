@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">EManh</string>
-    <string name="emanh">EMANH</string>
+    <string name="emanh">EManh</string>
     <string name="welcome">Chào mừng đến với EMANH, nhập tài khoản mà mật khẩu của bạn</string>
-    <string name="input_username">Nhập tên đăng nhập</string>
+    <string name="input_username">Nhập tên người dùng</string>
     <string name="input_password">Nhập mật khẩu</string>
     <string name="login">Đăng nhập</string>
     <string name="tv_signup">Bạn chưa có tài khoản? Đăng ký</string>
@@ -104,4 +104,6 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_your_moment">Chia sẽ khoảng khắc của bạn ...</string>
+    <string name="post">Đăng bài</string>
 </resources>

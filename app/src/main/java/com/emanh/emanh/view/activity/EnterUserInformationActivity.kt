@@ -66,5 +66,15 @@ class EnterUserInformationActivity : BaseActivity() {
                 binding.editTextGender.text.toString()
             )
         }
+
+        binding.textViewNext.setOnClickListener {
+            loginViewModel.validateEnterUserInformation(
+                binding.editTextFirstName.text.toString(),
+                binding.editTextLastName.text.toString(),
+                binding.editTextAddress.text.toString(),
+                binding.editTextBirthday.text.toString(),
+                binding.editTextGender.text.toString()
+            )
+        }
     }
 }

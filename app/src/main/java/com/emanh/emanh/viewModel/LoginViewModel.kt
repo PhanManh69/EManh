@@ -113,14 +113,18 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    fun validateLogin(username: String, password: String) {
-        _usernameError.value = if (username.isEmpty()) "Tên đăng nhập không được để trống" else null
+    fun validateLogin(emailAddress: String, password: String) {
+        _emailAddressError.value = when {
+            emailAddress.isEmpty() -> "Địa chỉ email không được để trống"
+            !Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches() -> "Định dạng địa chỉ email không hợp lệ"
+            else -> null
+        }
         _passwordError.value = when {
             password.isEmpty() -> "Mật khẩu không được để trống"
             password.length < 6 -> "Độ dài mật khẩu phải lớn hơn 6"
             else -> null
         }
-        _isFormValid.value = _usernameError.value == null && _passwordError.value == null
+        _isFormValid.value = _emailAddressError.value == null && _passwordError.value == null
     }
 
     fun validateRegister(username: String, phoneNumber: String, emailAddress: String, password: String, confirmPassword: String) {

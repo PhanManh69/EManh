@@ -2,6 +2,8 @@ package com.emanh.emanh.view.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.emanh.emanh.R
@@ -29,6 +31,17 @@ class ForgetPasswordActivity : BaseActivity() {
                 binding.editTextEmail.text.toString()
             )
         }
+
+        binding.editTextEmail.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                loginViewModel.validateForgetPassword(
+                    binding.editTextPhoneNumber.text.toString(),
+                    binding.editTextEmail.text.toString()
+                )
+                return@OnEditorActionListener true
+            }
+            false
+        })
 
         binding.textViewLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
