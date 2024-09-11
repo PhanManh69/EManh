@@ -43,6 +43,7 @@
                     android:layout_marginTop="72dp"
                     android:drawableStart="@drawable/icon_user"
                     android:inputType="text"
+                    android:maxLength="6"
                     android:hint="@string/input_username"
                     android:imeOptions="actionNext"
                     android:error="@{loginViewModel.usernameError}"/>

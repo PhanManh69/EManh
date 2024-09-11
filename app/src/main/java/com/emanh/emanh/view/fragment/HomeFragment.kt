@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emanh.emanh.databinding.FragmentHomeBinding
 import com.emanh.emanh.view.adapter.ItemFriendAdapter
+import com.emanh.emanh.view.adapter.ItemPostAdapter
 import com.emanh.emanh.viewModel.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -32,12 +32,20 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        val adapter = ItemFriendAdapter(mutableListOf())
+        val adapterFriend = ItemFriendAdapter(mutableListOf())
         binding.listItemFriend.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.listItemFriend.adapter = adapter
+        binding.listItemFriend.adapter = adapterFriend
 
         homeViewModel.friendsList.observe(viewLifecycleOwner, Observer {
-            adapter.updateList(it)
+            adapterFriend.updateList(it)
+        })
+
+        val adapterPost = ItemPostAdapter(mutableListOf(), homeViewModel)
+        binding.listItemPost.layoutManager = LinearLayoutManager(context)
+        binding.listItemPost.adapter = adapterPost
+
+        homeViewModel.postList.observe(viewLifecycleOwner, Observer {
+            adapterPost.updateList(it)
         })
     }
 }

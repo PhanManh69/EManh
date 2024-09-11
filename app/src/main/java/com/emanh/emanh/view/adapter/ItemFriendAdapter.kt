@@ -41,5 +41,4 @@ class ItemFriendAdapter(
         items.addAll(newItems)
         notifyDataSetChanged()
     }
-
 }

@@ -70,4 +70,7 @@ dependencies {
     implementation(libs.bundles.comLibs)
 
     implementation(libs.androidx.fragment.ktx)
+
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.me.circleindicator)
 }
