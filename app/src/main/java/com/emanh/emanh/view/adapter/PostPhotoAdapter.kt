@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.emanh.emanh.databinding.ViewholderPostPhotoBinding
+import com.emanh.emanh.viewModel.HomeViewModel
 
 class PostPhotoAdapter(
-    private val items: MutableList<String>
+    private val items: MutableList<String>,
+    private val viewModel: HomeViewModel
 ) : RecyclerView.Adapter<PostPhotoAdapter.ViewHolder>() {
 
     private var context: Context? = null
@@ -25,8 +27,17 @@ class PostPhotoAdapter(
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val postPhoto = items[position]
+
         Glide.with(holder.itemView.context)
-            .load(items[position])
+            .load(postPhoto)
             .into(holder.binding.imageViewPhoto)
+
+        holder.itemView.setOnClickListener {
+            context?.let {
+                viewModel.showPhotoPost(it, holder, postPhoto)
+            }
+        }
+
     }
 }

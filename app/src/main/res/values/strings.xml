@@ -108,5 +108,6 @@
     <string name="post">Đăng bài</string>
     <string name="seeMore">Xem thêm</string>
     <string name="comment">Bình luận</string>
-    <string name="like">Tim</string>
+    <string name="like">Thích</string>
+    <string name="zero">0</string>
 </resources>

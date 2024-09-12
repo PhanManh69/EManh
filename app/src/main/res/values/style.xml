@@ -4,7 +4,7 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
-    <style name="ShapeAppearanceOverlay.App.CornerSize5Percent" parent="">
+    <style name="ShapeAppearanceOverlay.App.CornerSize20Percent" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>
     </style>

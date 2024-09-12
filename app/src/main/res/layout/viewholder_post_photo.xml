@@ -16,6 +16,6 @@
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:importantForAccessibility="no"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize5Percent" />
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize20Percent" />
 
 </FrameLayout>

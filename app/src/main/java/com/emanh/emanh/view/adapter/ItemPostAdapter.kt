@@ -2,6 +2,7 @@ package com.emanh.emanh.view.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.emanh.emanh.R
 import com.emanh.emanh.databinding.ViewholderItemPostBinding
 import com.emanh.emanh.model.PostModel
+import com.emanh.emanh.view.activity.CommentPostActivity
 import com.emanh.emanh.viewModel.HomeViewModel
 
 class ItemPostAdapter(
@@ -48,12 +50,18 @@ class ItemPostAdapter(
         holder.binding.textViewUsername.text = "@${post.username}"
         holder.binding.textViewPost.text = post.post
 
-        val postPhotoAdapter = PostPhotoAdapter(post.postPhoto)
+        val postPhotoAdapter = PostPhotoAdapter(items[position].postPhoto, viewModel)
         holder.binding.viewPagerImagePost.adapter = postPhotoAdapter
         holder.binding.indicator.setViewPager(holder.binding.viewPagerImagePost)
 
         togglePostExpansion(holder)
         toggleLike(holder, post.id)
+
+        holder.binding.textViewComment.setOnClickListener {
+            val intent = Intent(holder.itemView.context, CommentPostActivity::class.java)
+            intent.putExtra("objectPost", post)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

@@ -120,7 +120,7 @@
             <TextView
                 android:id="@+id/textViewLike"
                 style="@style/TextDocumentWhite"
-                android:layout_marginEnd="64dp"
+                android:layout_marginEnd="56dp"
                 android:clickable="true"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
@@ -132,7 +132,7 @@
             <TextView
                 android:id="@+id/textViewComment"
                 style="@style/TextDocumentWhite"
-                android:layout_marginStart="64dp"
+                android:layout_marginStart="56dp"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
                 android:text="@string/comment"
