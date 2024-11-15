@@ -1,6 +1,9 @@
+@file:Suppress("DEPRECATION")
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
 }
 
 android {
@@ -9,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.emanh.emanh"
-        minSdk = 30
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -33,6 +36,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        true.also { dataBinding = it }
+        viewBinding = true
+    }
+    packagingOptions {
+        exclude("META-INF/NOTICE.md")
+        exclude("META-INF/LICENSE.md")
+    }
 }
 
 dependencies {
@@ -45,4 +56,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.databinding.runtime)
+
+    implementation(libs.com.ucrop)
+
+    implementation(libs.com.android.mail)
+    implementation(libs.com.android.activation)
+    implementation(libs.org.kotlinx.coroutines.android)
+
+    implementation(libs.bundles.comLibs)
+
+    implementation(libs.androidx.fragment.ktx)
+
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.me.circleindicator)
 }

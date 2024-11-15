@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.emanh.emanh.viewModel.LoginViewModel" />
+    </data>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_login"
+        tools:context=".view.activity.LoginActivity">
+    
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:background="@drawable/bg_blue_blur50_0">
+    
+            <ImageView
+                android:id="@+id/imageLogo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="48dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/logo_app"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+    
+            <TextView
+                style="@style/TextAppNameWhite"
+                android:text="@string/emanh"
+                android:fontFamily="@font/lobster_regular"
+                app:layout_constraintTop_toBottomOf="@+id/imageLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+    
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_black_blue_blur50_30"
+                app:layout_constraintBottom_toBottomOf="parent">
+    
+                <TextView
+                    style="@style/TextContentWhite"
+                    android:gravity="center"
+                    android:text="@string/welcome"/>
+    
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextUsername"
+                    android:layout_marginTop="72dp"
+                    android:drawableStart="@drawable/icon_email"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/input_address_email"
+                    android:imeOptions="actionNext"
+                    android:error="@{loginViewModel.emailAddressError}"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextPassword"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/input_password"
+                    android:imeOptions="actionDone"
+                    android:drawableStart="@{loginViewModel.passwordIconStart}"
+                    android:drawableEnd="@{loginViewModel.passwordIconEnd}"
+                    android:inputType="@{loginViewModel.inputType}"
+                    android:error="@{loginViewModel.passwordError}"/>
+    
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/ButtonLightBlue"
+                    android:id="@+id/buttonLogin"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/login"/>
+    
+                <TextView
+                    style="@style/TextContentWhite"
+                    android:id="@+id/textViewForgetPassword"
+                    android:layout_marginTop="72dp"
+                    android:layout_gravity="center"
+                    android:text="@string/tv_forget_password"/>
+    
+                <TextView
+                    style="@style/TextContentWhite"
+                    android:id="@+id/textViewSignUp"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center"
+                    android:text="@string/tv_signup"/>
+    
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

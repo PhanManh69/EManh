@@ -7,8 +7,20 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.8.0"
+activity = "1.9.2"
 constraintlayout = "2.1.4"
+lifecycle = "2.8.5"
+databinding = "8.6.0"
+ucrop = "2.2.8"
+androidmail = "1.6.6"
+androidactivation = "1.6.7"
+kotlinxcoroutinesandroid = "1.7.3"
+glide = "4.16.0"
+gson = "2.11.0"
+dotsindicator = "5.0"
+fragmentktx = "1.8.3"
+viewpager2 = "1.1.0"
+circleindicator = "2.1.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -19,8 +31,23 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databinding" }
+com-ucrop = { group = "com.github.yalantis", name = "ucrop", version.ref = "ucrop" }
+com-android-mail = { group = "com.sun.mail", name = "android-mail", version.ref = "androidmail" }
+com-android-activation = { group = "com.sun.mail", name = "android-activation", version.ref = "androidactivation" }
+org-kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxcoroutinesandroid" }
+com-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+com-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+com-dotsindicator = { group = "com.tbuonomo", name = "dotsindicator", version.ref = "dotsindicator" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentktx" }
+androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
+me-circleindicator = { group = "me.relex", name = "circleindicator", version.ref = "circleindicator" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
+[bundles]
+comLibs = ["com-glide", "com-gson", "com-dotsindicator"]
