@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.emanh.emanh.viewModel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_login"
+        tools:context=".view.activity.CodeConfirmForgetPassActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:background="@drawable/bg_blue_blur50_0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="48dp"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_black_blue_blur50_30"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    style="@style/TextContentWhite"
+                    android:id="@+id/textViewEmail"
+                    android:gravity="center"/>
+
+                <AutoCompleteTextView
+                    style="@style/InputTextWhite"
+                    android:id="@+id/editTextEnterCode"
+                    android:layout_marginTop="72dp"
+                    android:inputType="number"
+                    android:letterSpacing="2"
+                    android:maxLength="6"
+                    android:textAlignment="center"
+                    tools:ignore="LabelFor" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/ButtonLightBlue"
+                    android:id="@+id/buttonConfirm"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/confirm"/>
+
+                <TextView
+                    style="@style/TextContentWhite"
+                    android:id="@+id/textViewSendCode"
+                    android:layout_marginTop="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/send_back_code"
+                    android:lineSpacingExtra="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextContentWhite"
+                android:id="@+id/textViewForgetPassword"
+                android:layout_marginBottom="16dp"
+                android:text="@string/back_enter_information_your"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

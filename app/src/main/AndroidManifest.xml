@@ -2,18 +2,41 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.EManh"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.activity.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.CodeConfirmForgetPassActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.CodeConfirmRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.SetAvatarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.EnterUserInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.BeginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +44,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            tools:ignore="DiscouragedApi" />
     </application>
 
 </manifest>
