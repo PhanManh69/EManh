@@ -1,3 +1,105 @@
 <resources>
     <string name="app_name">EManh</string>
+    <string name="emanh">EMANH</string>
+    <string name="welcome">Chào mừng đến với EMANH, nhập tài khoản mà mật khẩu của bạn</string>
+    <string name="input_username">Nhập tên đăng nhập</string>
+    <string name="input_password">Nhập mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="tv_signup">Bạn chưa có tài khoản? Đăng ký</string>
+    <string name="tv_forget_password">Quyên mật khẩu?</string>
+    <string name="input_confirm_password">Nhập lại mật khẩu</string>
+    <string name="input_number_phone">Nhập số điện thoại</string>
+    <string name="input_address_email">Nhập địa chỉ email</string>
+    <string name="register">Đăng ký</string>
+    <string name="tv_login">Bạn đã có tài khoản? Đăng nhập</string>
+    <string name="tv_intro_register">Đăng ký tài khoản mới, nhập thông tin cá nhân của bạn</string>
+    <string name="tv_intro_forget_pass">Quyên mật khẩu, nhập số điện thoại và email đăng ký tài khoản của bạn</string>
+    <string name="next">Tiếp theo</string>
+    <string name="tv_enter_information">Nhập thông tin các nhận của bạn</string>
+    <string name="input_first_name">Nhập họ và tên đệm</string>
+    <string name="input_last_name">Nhập tên của bạn</string>
+    <string name="input_birthday">Nhập ngày sinh nhật</string>
+    <string name="select_gender">Chọn giới tính</string>
+    <string name="input_address">Nhập thành phố hiện tại</string>
+    <string name="back">Quay lại</string>
+    <string name="selection_gender">Chọn giới tính</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+    <string name="other">Khác</string>
+    <string name="leave">Hủy</string>
+    <string name="tv_select_avatar_your">Chọn avatar của bạn</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="skip">Bỏ qua</string>
+    <string name="send_code">Gửi lại mã</string>
+    <string name="back_enter_register">Nhập lại thông tin tài khoản đăng ký</string>
+    <string name="send_back_code">Ban chưa nhân được mã xác nhận\nGửi lại mã</string>
+    <string name="back_enter_information_your">Nhập lại thông tin tài khoản của bạn</string>
+    <string name="tv_enter_password">Nhập vào mật khẩu mới của bạn để tạo lại mật khẩu</string>
+    <string name="input_new_password">Nhập mật khẩu mới</string>
+    <string name="confirm_new_password">Nhập lại mật khẩu</string>
+    <string-array name="provinceCity">
+        <item>An Giang</item>
+        <item>Bà Rịa – Vũng Tàu</item>
+        <item>Bạc Liêu</item>
+        <item>Bắc Giang</item>
+        <item>Bắc Kạn</item>
+        <item>Bắc Ninh</item>
+        <item>Bến Tre</item>
+        <item>Bình Dương</item>
+        <item>Bình Định</item>
+        <item>Bình Phước</item>
+        <item>Bình Thuận</item>
+        <item>Cà Mau</item>
+        <item>Cao Bằng</item>
+        <item>Cần Thơ</item>
+        <item>Đà Nẵng</item>
+        <item>Đắk Lắk</item>
+        <item>Đắk Nông</item>
+        <item>Điện Biên</item>
+        <item>Đồng Nai</item>
+        <item>Đồng Tháp</item>
+        <item>Gia Lai</item>
+        <item>Hà Giang</item>
+        <item>Hà Nam</item>
+        <item>Hà Nội</item>
+        <item>Hà Tĩnh</item>
+        <item>Hải Dương</item>
+        <item>Hải Phòng</item>
+        <item>Hậu Giang</item>
+        <item>Hòa Bình</item>
+        <item>TP. Hồ Chí Minh</item>
+        <item>Hưng Yên</item>
+        <item>Khánh Hòa</item>
+        <item>Kiên Giang</item>
+        <item>Kon Tum</item>
+        <item>Lai Châu</item>
+        <item>Lạng Sơn</item>
+        <item>Lào Cai</item>
+        <item>Lâm Đồng</item>
+        <item>Long An</item>
+        <item>Nam Định</item>
+        <item>Nghệ An</item>
+        <item>Ninh Bình</item>
+        <item>Ninh Thuận</item>
+        <item>Phú Thọ</item>
+        <item>Phú Yên</item>
+        <item>Quảng Bình</item>
+        <item>Quảng Nam</item>
+        <item>Quảng Ngãi</item>
+        <item>Quảng Ninh</item>
+        <item>Quảng Trị</item>
+        <item>Sóc Trăng</item>
+        <item>Sơn La</item>
+        <item>Tây Ninh</item>
+        <item>Thái Bình</item>
+        <item>Thái Nguyên</item>
+        <item>Thanh Hóa</item>
+        <item>Thừa Thiên Huế</item>
+        <item>Tiền Giang</item>
+        <item>Trà Vinh</item>
+        <item>Tuyên Quang</item>
+        <item>Vĩnh Long</item>
+        <item>Vĩnh Phúc</item>
+        <item>Yên Bái</item>
+    </string-array>
 </resources>

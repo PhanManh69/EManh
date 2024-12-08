@@ -7,8 +7,14 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.8.0"
+activity = "1.9.2"
 constraintlayout = "2.1.4"
+lifecycle = "2.8.5"
+databinding = "8.6.0"
+ucrop = "2.2.8"
+androidmail = "1.6.6"
+androidactivation = "1.6.7"
+kotlinxcoroutinesandroid = "1.7.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -19,6 +25,13 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databinding" }
+com-ucrop = { group = "com.github.yalantis", name = "ucrop", version.ref = "ucrop" }
+com-android-mail = { group = "com.sun.mail", name = "android-mail", version.ref = "androidmail" }
+com-android-activation = { group = "com.sun.mail", name = "android-activation", version.ref = "androidactivation" }
+org-kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxcoroutinesandroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
